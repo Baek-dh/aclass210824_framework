@@ -35,6 +35,24 @@ public interface MemberService {
 	 * @return loginMember
 	 */
 	Member login(Member member);
+
+	/** 아이디 중복 검사
+	 * @param inputId
+	 * @return result
+	 */
+	int idDupCheck(String inputId);
+
+	/** 이메일 중복 검사
+	 * @param inputEmail
+	 * @return result
+	 */
+	int emailDupCheck(String inputEmail);
+
+	/** 회원가입
+	 * @param member
+	 * @return result
+	 */
+	int signUp(Member member);
 }
 
 

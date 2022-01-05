@@ -25,6 +25,36 @@ public class MemberDAO {
 		Member loginMember = sqlSession.selectOne("memberMapper.login", memberId);
 		return loginMember;
 	}
+
+
+	/** 아이디 중복 검사
+	 * @param inputId
+	 * @return result
+	 */
+	public int idDupCheck(String inputId) {
+		return sqlSession.selectOne("memberMapper.idDupCheck", inputId);
+	}
+
+
+	/** 이메일 중복 검사
+	 * @param inputEmail
+	 * @return result
+	 */
+	public int emailDupCheck(String inputEmail) {
+		return sqlSession.selectOne("memberMapper.emailDupCheck", inputEmail);
+	}
+
+
+	/** 회원 가입
+	 * @param member
+	 * @return result
+	 */
+	public int signUp(Member member) {
+		return sqlSession.insert("memberMapper.signUp", member);
+	}
+	
+	
+	
 	
 	
 	

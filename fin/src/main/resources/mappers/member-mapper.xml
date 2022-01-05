@@ -64,8 +64,36 @@
 	 	SELECT * FROM MEMBER
 	 	WHERE MEMBER_ID = #{memberId}
 	 	AND STATUS_CD = 1
-	 	AND GRADE_CD = 1
+	 	AND GRADE_CD = 1  
 	 </select>
+	 
+	 
+	 <!-- 아이디 중복 검사 -->
+	 <!-- 
+	 	int자료형 별칭 : _int
+	 	Integer 별칭  : int
+	  -->
+	 <select id="idDupCheck" parameterType="string" resultType="_int">
+	 	SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_ID = #{inputId}
+		AND STATUS_CD != 2
+	 </select>
+	 
+	 <!-- 이메일 중복 검사 -->
+	 <select id="emailDupCheck" parameterType="string" resultType="_int">
+	 	SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_EMAIL = #{inputEmail}
+		AND STATUS_CD != 2
+	 </select>
+	 
+	 
+	 <!-- 회원 가입 -->			<!-- Member VO 별칭 -->
+	 <insert id="signUp" parameterType="Member">
+	 	INSERT INTO MEMBER VALUES(
+	 		SEQ_MEMBER_NO.NEXTVAL, #{memberId}, #{memberPw},
+	 		#{memberName}, #{memberPhone}, #{memberEmail}, #{memberAddress},
+	 		DEFAULT, DEFAULT, DEFAULT )
+	 </insert>
 	 
 	 
 	 

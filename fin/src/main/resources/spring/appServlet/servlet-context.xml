@@ -56,6 +56,8 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	
+	
 	<!-- /WEB-INF/views/redirect:/.jsp -->
 	
 	<!-- @Controller, @Service, @Repository, @Component가 작성된 클래스를 Bean 등록 -->
