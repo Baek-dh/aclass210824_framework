@@ -27,8 +27,7 @@
 								<h6>비밀번호</h6>
 							</div>
 							<div class="col-md-6">
-								<input type="password" class="form-control" id="currentPw"
-									name="currentPw">
+								<input type="password" class="form-control" id="currentPw" name="currentPw">
 							</div>
 						</div>
 
