@@ -112,7 +112,6 @@ public class MemberServiceImpl implements MemberService {
 	// @Transactional // 트랜잭션 처리는 여러 DML 수행 시 사용한다.
 	@Override
 	public int updateMember(Member member) {
-		dao.updateMember(member);
 		return dao.updateMember(member);
 	}
 

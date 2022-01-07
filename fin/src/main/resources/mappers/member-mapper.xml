@@ -134,7 +134,7 @@
 		UPDATE MEMBER SET
 		STATUS_CD = 2
 		WHERE MEMBER_NO = #{memberNo}
-   </update>
+   	</update>
 	 
 	 
 	 
