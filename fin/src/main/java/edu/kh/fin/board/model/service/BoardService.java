@@ -3,6 +3,7 @@ package edu.kh.fin.board.model.service;
 import java.util.List;
 
 import edu.kh.fin.board.model.vo.Board;
+import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
 
 // Service 인터페이스 왜 사용할까?
@@ -27,9 +28,16 @@ public interface BoardService {
 
 	/** 게시글 상세 조회
 	 * @param boardNo
+	 * @param memberNo
 	 * @return board
 	 */
-	Board selectBoard(int boardNo);
+	Board selectBoard(int boardNo, int memberNo);
+
+	
+	/** 카테고리 목록 조회
+	 * @return category
+	 */
+	List<Category> selectCategory();
 
 }
 

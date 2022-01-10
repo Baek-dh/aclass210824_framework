@@ -34,7 +34,6 @@
 
 	<!-- BoardImage VO resultMap -->
 	<resultMap type="BoardImage" id="boardImage_rm">
-	
 		<id property="imgNo" column="IMG_NO"/>
 		
 		<result property="imgPath" column="IMG_PATH"/>
@@ -42,7 +41,13 @@
 		<result property="imgOriginal" column="IMG_ORIGINAL"/>
 		<result property="imgLevel" column="IMG_LEVEL"/>
 		<result property="boardNo" column="BOARD_NO"/>
-		
+	</resultMap>
+
+
+	<!-- Category VO resultMap -->
+	<resultMap type="Category" id="category_rm">
+		<id 	property="categoryCode" column="CATEGORY_CD"/>
+		<result property="categoryName" column="CATEGORY_NM"/>
 	</resultMap>
 
 
@@ -92,6 +97,20 @@
       JOIN CATEGORY USING(CATEGORY_CD)
       WHERE BOARD_NO = #{boardNo}
       AND STATUS_CD != 4
+	</select>
+
+	
+	<!-- 게시글 조회 수 증가 -->
+	<update id="increaseReadCount">
+		UPDATE BOARD SET
+		READ_COUNT = READ_COUNT + 1
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+
+
+	<!-- 카테고리 목록 조회 -->
+	<select id="selectCategory" resultMap="category_rm">
+		SELECT * FROM CATEGORY ORDER BY 1
 	</select>
 
 
