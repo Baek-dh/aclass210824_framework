@@ -2,6 +2,8 @@ package edu.kh.fin.board.model.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
@@ -12,6 +14,10 @@ import edu.kh.fin.board.model.vo.Pagination;
 // 3. 결합도 다운
 // 4. AOP 사용
 
+/**
+ * @author user1
+ *
+ */
 public interface BoardService {
 
 	/** 전체 게시글 수 count + 페이징 처리에 필요한 값 계산
@@ -38,6 +44,15 @@ public interface BoardService {
 	 * @return category
 	 */
 	List<Category> selectCategory();
+
+	/** 게시글 삽입 + 이미지 삽입
+	 * @param board
+	 * @param images
+	 * @param webPath
+	 * @param serverPath
+	 * @return boardNo
+	 */
+	int insertBoard(Board board, List<MultipartFile> images, String webPath, String serverPath);
 
 }
 

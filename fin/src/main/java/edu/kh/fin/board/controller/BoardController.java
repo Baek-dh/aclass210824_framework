@@ -136,9 +136,29 @@ public class BoardController {
 		 * 					해당 메소드 호출 시 연결된 메모리의 파일을 디스크(HDD,SSD)로 저장
 		 * */
 		
+		// 1) 로그인 회원 번호를 board에 세팅
+		board.setMemberNo( loginMember.getMemberNo() );
+		
+		// 2) 웹 접근 경로(webPath), 서버 저장 경로(serverPath)
+		String webPath = "/resources/images/board/"; // (DB에 저장되는 경로)
+		String serverPath = session.getServletContext().getRealPath(webPath);
+		
+		// 3) 게시글 삽입 Servic 호출
+		int boardNo = service.insertBoard(board, images, webPath, serverPath);
+		// -> Service 수행 후 삽입된 게시글 번호를 얻어올 예정
 		
 		
-		return null;
+		String path = null;
+		if(boardNo > 0) { // 삽입 성공
+			Util.swalSetMessage("게시글 삽입 성공", null, "success", ra);
+			path = "view/"+boardNo;
+			
+		}else { // 실패
+			Util.swalSetMessage("게시글 삽입 실패", null, "error", ra);
+			path = "insert";
+		}
+		
+		return "redirect:"+path;
 	}
 	
 	
