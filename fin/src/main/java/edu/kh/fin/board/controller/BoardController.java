@@ -200,8 +200,18 @@ public class BoardController {
 		// 2) 게시글 수정 Service 호출
 		int result = service.updateBoard(board, images, webPath, serverPath, deleteImages);
 		
+		String path = null;
 		
-		return null;
+		if(result > 0) {
+			Util.swalSetMessage("게시글 수정 성공", null, "success", ra);
+			path = "view/" + board.getBoardNo() + "?cp=" + cp;
+			
+		}else {
+			Util.swalSetMessage("게시글 수정 실패", null, "error", ra);
+			path = "updateForm";
+		}
+		
+		return "redirect:" + path;
 	}
 	
 	

@@ -198,11 +198,26 @@
 	<delete id="deleteImages" parameterType="map">
 		DELETE FROM BOARD_IMG
 		WHERE BOARD_NO = #{boardNo}
-		AND IMG_LEVEL IN (#{deleteImages})
+		AND IMG_LEVEL IN ( ${deleteImages} )
 	</delete>
 
 
 
+	<!-- 게시글 이미지 수정 -->
+	<update id="updateBoardImage">
+		UPDATE BOARD_IMG SET
+		IMG_PATH = #{imgPath},
+		IMG_NM = #{imgName},
+		IMG_ORIGINAL = #{imgOriginal}
+		WHERE BOARD_NO = #{boardNo}
+		AND IMG_LEVEL = #{imgLevel}
+	</update>
+	
+	<!-- 게시글 이미지 삽입 -->
+	<insert id="insertBoardImage">
+		INSERT INTO BOARD_IMG VALUES
+		(SEQ_IMG_NO.NEXTVAL, #{imgPath}, #{imgName}, #{imgOriginal}, #{imgLevel}, #{boardNo})
+	</insert>
 
 
 

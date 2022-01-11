@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.kh.fin.board.model.dao.BoardDAO;
 import edu.kh.fin.board.model.exception.InsertBoardFailException;
+import edu.kh.fin.board.model.exception.UpdateBoardFailException;
 import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.BoardImage;
 import edu.kh.fin.board.model.vo.Category;
@@ -248,19 +249,43 @@ public class BoardServiceImpl implements BoardService{
 				
 				if(result == 0) { // 기존에 저장되지 않은 이미지가 추가됨 -> INSERT 진행
 					result = dao.insertBoardImage(img);
+					
+					if(result == 0) {
+						// 사용자 정의 예외
+						throw new UpdateBoardFailException("이미지 삽입 중 문제 발생");
+					}
+					
+				}
+				
+			} // for end
+			
+			
+			// 6) 전달 받은 images 중 업로드된 파일이 있는 부분을 실제 파일 저장
+			
+			if(!imgList.isEmpty()) {
+				
+				try {
+					for(int i=0; i<imgList.size(); i++) {
+						
+						images.get( imgList.get(i).getImgLevel() )
+						.transferTo(new File(serverPath + "/" + imgList.get(i).getImgName() ));
+						
+					}
+					
+				}catch (Exception e) {
+					e.printStackTrace();
+					
+					// 사용자 정의 예외 (RuntimeException)
+					throw new UpdateBoardFailException();
 				}
 				
 			}
-		
 			
 			
-		}
+		} // if end
 		
 		
-		
-		
-		
-		return 0;
+		return result;
 	}
 	
 	
