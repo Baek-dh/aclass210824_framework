@@ -155,7 +155,7 @@
 	<!-- 동적 SQL : 마이바티스의 핵심 기능으로 SQL 수행 중 
 					조건, 반복, 특정 구문 추가 등을 동적으로 수행할 수 있음. -->
 					
-	<!--  <forEach> 태그
+	<!--  <foreach> 태그
 		- collection : 반복 접근할 컬렉션 형태의 파라미터
 		- item : collection에서 반복 시 마다 순차적으로 하나씩 접근한 요소
 		- index : 현재 반복 인덱스
@@ -179,6 +179,28 @@
 		</foreach>
 		
 	</insert>
+
+
+	<!-- 게시글 수정 -->
+	<update id="updateBoard">
+		UPDATE BOARD SET
+		BOARD_TITLE = #{boardTitle},
+		BOARD_CONTENT = #{boardContent},
+		CATEGORY_CD = #{categoryCode},
+		MODIFY_DT = SYSDATE
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+	
+	
+	
+	<!-- 기존에 있었지만 삭제된 이미지 DELETE -->
+	<!-- 파라미터 타입이 Map인 경우  #{Key}를 작성하면 Value가 출력됨 -->
+	<delete id="deleteImages" parameterType="map">
+		DELETE FROM BOARD_IMG
+		WHERE BOARD_NO = #{boardNo}
+		AND IMG_LEVEL IN (#{deleteImages})
+	</delete>
+
 
 
 

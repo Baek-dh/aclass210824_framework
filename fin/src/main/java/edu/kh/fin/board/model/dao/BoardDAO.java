@@ -1,6 +1,7 @@
 package edu.kh.fin.board.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -89,6 +90,23 @@ public class BoardDAO {
 	 */
 	public int insertImgList(List<BoardImage> imgList) {
 		return sqlSession.insert("boardMapper.insertImgList", imgList);
+	}
+ 
+	/** 게시글 수정
+	 * @param board
+	 * @return result
+	 */
+	public int updateBoard(Board board) {
+		return sqlSession.update("boardMapper.updateBoard", board);
+	}
+
+	
+	/** 기존에 있었지만 삭제된 이미지 DELETE
+	 * @param map
+	 * @return result
+	 */
+	public int deleteImages(Map<String, Object> map) {
+		return sqlSession.delete("boardMapper.deleteImages", map);
 	}
 	
 	

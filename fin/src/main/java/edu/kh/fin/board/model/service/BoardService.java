@@ -54,6 +54,23 @@ public interface BoardService {
 	 */
 	int insertBoard(Board board, List<MultipartFile> images, String webPath, String serverPath);
 
+	
+	/** 게시글 수정
+	 * @param board
+	 * @param images
+	 * @param webPath
+	 * @param serverPath
+	 * @param deleteImages
+	 * @return result
+	 */
+	int updateBoard(Board board, List<MultipartFile> images, String webPath, String serverPath, String deleteImages);
+
+	/** 수정 화면 전환용 게시글 상세 조회
+	 * @param boardNo
+	 * @return board
+	 */
+	Board selectBoard(int boardNo);
+
 }
 
 

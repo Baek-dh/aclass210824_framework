@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -160,6 +161,49 @@ public class BoardController {
 		
 		return "redirect:"+path;
 	}
+	
+	
+	
+	// 게시글 수정 화면 전환
+	@RequestMapping(value="updateForm", method=RequestMethod.POST)
+	public String updateForm(int boardNo, Model model) {
+		
+		// 카테고리 목록 조회
+		List<Category> category = service.selectCategory();
+		
+		// 게시글 상세 조회
+		Board board = service.selectBoard(boardNo);
+		
+		model.addAttribute("category", category);
+		model.addAttribute("board", board);
+		
+		return "board/boardUpdate";
+	}
+	
+	
+	// 게시글 수정
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	public String updateBoard(Board board/*커맨드 객체*/,
+			@RequestParam(value="cp", required=false, defaultValue="1") int cp, 
+			@RequestParam("deleteImages") String deleteImages,
+			@RequestParam("images") List<MultipartFile> images,
+			RedirectAttributes ra, HttpSession session) {
+		
+		//System.out.println("deleteImages  : " + deleteImages);
+		// deleteImages 가 비어있을 경우 == "" (빈 문자열)
+		// deleteImages 가 비어 있지 않을 경우 == "0,2" 문자열
+		
+		// 1) 웹 접근 경로(webPath), 서버 저장 경로(serverPath)
+		String webPath = "/resources/images/board/"; // (DB에 저장되는 경로)
+		String serverPath = session.getServletContext().getRealPath(webPath);
+		
+		// 2) 게시글 수정 Service 호출
+		int result = service.updateBoard(board, images, webPath, serverPath, deleteImages);
+		
+		
+		return null;
+	}
+	
 	
 	
 	

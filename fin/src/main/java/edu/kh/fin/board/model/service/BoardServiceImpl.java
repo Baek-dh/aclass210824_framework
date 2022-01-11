@@ -3,7 +3,9 @@ package edu.kh.fin.board.model.service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.kh.fin.board.model.dao.BoardDAO;
+import edu.kh.fin.board.model.exception.InsertBoardFailException;
 import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.BoardImage;
 import edu.kh.fin.board.model.vo.Category;
@@ -73,7 +76,7 @@ public class BoardServiceImpl implements BoardService{
 
 
 	// 게시글 삽입 + 이미지 삽입
-	@Transactional // 예외 발생 시 ROLLBACK
+	@Transactional // RuntimeException 발생 시 ROLLBACK
 	@Override
 	public int insertBoard(Board board, List<MultipartFile> images, String webPath, String serverPath) {
 	
@@ -146,19 +149,118 @@ public class BoardServiceImpl implements BoardService{
 							
 							// 파일 변환이 실패할 경우
 							// 사용자 정의 예외 발생
-							
+							throw new InsertBoardFailException("파일 변환 중 문제 발생");
 						}
 					}
 					
 				}else {
 					// 업로드된 이미지 수와 삽입된 행의 수가 다를 경우
 					// 사용자 정의 예외 발생
+					throw new InsertBoardFailException();
 				}
 			}
 			
 		}
 		
 		return boardNo;
+	}
+
+	// 수정 화면 전환용 게시글 상세 조회
+	@Override
+	public Board selectBoard(int boardNo) {
+		Board board = dao.selectBoard(boardNo);
+		
+		// <br> -> \r\n으로 변경
+		board.setBoardContent( Util.changeNewLine2( board.getBoardContent() )  );
+		
+		return board;
+	}
+
+
+	// 게시글 수정
+	@Transactional
+	@Override
+	public int updateBoard(Board board, List<MultipartFile> images, String webPath, String serverPath,
+			String deleteImages) {
+		
+		// 1) 게시글 제목/내용 XSS, 개행문자 처리
+		board.setBoardTitle( Util.XSS( board.getBoardTitle() ) );
+		board.setBoardContent( Util.XSS( board.getBoardContent() ) );
+		board.setBoardContent( Util.changeNewLine( board.getBoardContent() ) );
+		
+		// 2) 게시글 부분 수정 진행
+		int result = dao.updateBoard(board);
+		
+		// 3) 기존에 있었지만 삭제된 이미지 DELETE 처리
+		if(result > 0) {
+			// 마이바티스는 SQL 수행 시 파라미터를 1개만 받을 수 있다!
+			// 전달할 파라미터가 다수인 경우 Map과 같은 컬렉션 객체를 이용하면 된다!
+			
+			if( !deleteImages.equals("") ) { // 삭제할 이미지 있을 경우
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("boardNo", board.getBoardNo());
+									// int -(Auto Boxing)-> Integer -> Object
+				
+				map.put("deleteImages", deleteImages);
+										// String -> Object
+				
+				result = dao.deleteImages(map);
+			}
+		}
+		
+		
+		// 4) images에 담겨있는 파일 정보 중
+		//    업로드된 파일 정보를 imgList에 옮겨 담기
+		if(result > 0) {
+			
+			List<BoardImage> imgList = new ArrayList<BoardImage>();
+			
+			for(int i=0 ; i<images.size(); i++) {
+				// i == images 인덱스 == imgLevel
+				
+				// 업로드된 파일이 있는 경우
+				if( !images.get(i).getOriginalFilename().equals("")  ) {
+					
+					BoardImage img = new BoardImage();
+					
+					img.setImgPath(webPath); // 웹 접근 경로
+					img.setImgName( Util.fileRename( images.get(i).getOriginalFilename() ) ); // 변경된 파일명
+					img.setImgOriginal( images.get(i).getOriginalFilename() ); // 원본 파일명
+					img.setImgLevel(i); // 이미지 레벨
+					img.setBoardNo( board.getBoardNo() ); // 게시글 번호
+					
+					imgList.add(img);
+				}
+			}
+			
+			
+			// 5) imgList가 비어있지 않을 경우
+			//    imgList에 있는 내용을 update 또는 insert
+			
+			// 향상된 for문으로 반복 접근할 List가 비어있다면 for문은 수행되지 않음.
+			for(BoardImage img : imgList) {
+				
+				// 서로 다른 행을 일괄적으로 update 하는 방법이 없기에 
+				// 한 행씩 수정
+				result = dao.updateBoardImage(img);
+				// 결과 1 -> 기존에 저장된 이미지가 수정됨.
+				// 결과 0 -> 기존에 저장되지 않은 이미지가 추가됨 -> INSERT 진행
+				
+				if(result == 0) { // 기존에 저장되지 않은 이미지가 추가됨 -> INSERT 진행
+					result = dao.insertBoardImage(img);
+				}
+				
+			}
+		
+			
+			
+		}
+		
+		
+		
+		
+		
+		return 0;
 	}
 	
 	

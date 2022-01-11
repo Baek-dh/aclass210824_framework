@@ -24,6 +24,15 @@ function boardValidate() {
 		$("#content").focus();
 		return false;
 	}
+
+	// 유효성 검사 후 문제가 없다면 
+	// input[name=deleteImages] 요소의 value 값으로 deleteImages 배열을 추가
+	$("input[name=deleteImages]").val(deleteImages);
+
+	//document.getElementsByName("deleteImages")[0].value = deleteImages;
+	//document.querySelector("input[name=deleteImages]").value = deleteImages;
+
+
 }
 
 // 이미지 영역을 클릭할 때 파일 첨부 창이 뜨도록 설정하는 함수
@@ -39,8 +48,16 @@ $(function() {
 });
 
 
+
+
 // 파일을 선택한 경우 선택된 input 요소를 복제해서 저장하는 용도의 객체(백업)
 const fileClone = {}; 
+
+
+// x 버튼이 눌러져 삭제된 이미지 레벨을 저장할 배열
+// -> 배열을 input 태그 value로 추가하면 '요소1,요소2,...' 형태의 문자열로 변환됨
+const deleteImages= [];
+
 
 // 각각의 영역에 파일을 첨부 했을 경우 미리 보기가 가능하도록 하는 함수
 function loadImg(input, num) {
@@ -50,13 +67,20 @@ function loadImg(input, num) {
 	if (input.files && input.files[0]) {
 
 		fileClone[num] = $(input).clone(); // 백업 객체에 복제본 추가
-
 		
+		// deleteImages 배열에 num값과 같은 번호가 존재하는 확인
+		if(deleteImages.indexOf(num) != -1 ){ // 존재하는 경우
+
+			// 배열.splice(시작 인덱스, 제거할 수) : 배열 내 시작 인덱스 부터 지정된 개수 만큼 요소 삭제 
+			deleteImages.splice( deleteImages.indexOf(num), 1);
+		} 
+
 		var reader = new FileReader();
 		reader.readAsDataURL(input.files[0]);
 		reader.onload = function(e) {
 			$(".boardImg").eq(num).children("img").attr("src", e.target.result);
 		}
+
 
 	} else{
 		console.log("취소 클릭함");
@@ -86,14 +110,12 @@ function loadImg(input, num) {
 }
 
 
-
 // 수정버튼 클릭 시 동작
 function updateForm(){
-	document.requestForm.action = "updateForm";
+	document.requestForm.action = "../updateForm";
 	document.requestForm.method = "POST";
 	document.requestForm.submit();
 }
-
 
 
 // 이미지에 있는 X 버튼을 눌렀을 때의 동작
@@ -111,5 +133,10 @@ $(".deleteImg").on("click", function(e){
 	const index = $(this).index(".deleteImg");
 	$("input[name=images]").eq(index).val("");
 
+	// deleteImages 배열에 같은 이미지 레벨이 없으면
+	if(deleteImages.indexOf(index) == -1)	{
+		// deleteImages 배열에 삭제된 이미지의 레벨을 추가
+		deleteImages.push(index);
+	}
 
 });

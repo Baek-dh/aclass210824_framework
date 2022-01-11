@@ -44,4 +44,16 @@ public class Util {
 	public static String changeNewLine(String content) {
 		return content.replaceAll("(\r\n|\r|\n|\n\r)", "<br>");
 	}
+	
+	// 개행 문자 변경 메소드2
+	public static String changeNewLine2(String content) {
+		return content.replaceAll("<br>", "\r\n");
+	}
+	
+	
+	
+	
+	
+	
+	
 }
