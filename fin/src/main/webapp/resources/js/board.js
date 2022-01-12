@@ -110,12 +110,25 @@ function loadImg(input, num) {
 }
 
 
-// 수정버튼 클릭 시 동작
+// 수정 버튼 클릭 시 동작
 function updateForm(){
 	document.requestForm.action = "../updateForm";
 	document.requestForm.method = "POST";
 	document.requestForm.submit();
 }
+
+// 삭제 버튼 클릭 시 동작
+function deleteBoard(){
+
+	if(confirm("정말 삭제 하시겠습니까?")){
+		document.requestForm.action = "../delete";
+		document.requestForm.method = "POST";
+		document.requestForm.submit();
+	}
+
+}
+
+
 
 
 // 이미지에 있는 X 버튼을 눌렀을 때의 동작

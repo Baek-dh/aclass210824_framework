@@ -12,7 +12,12 @@ import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.BoardImage;
 import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
+import edu.kh.fin.board.model.vo.Search;
 
+/**
+ * @author user1
+ *
+ */
 @Repository // 저장소(파일, DB)에 접근하는 객체(DAO)임을 알려줌. + Bean 등록
 public class BoardDAO {
 
@@ -125,6 +130,41 @@ public class BoardDAO {
 	 */
 	public int insertBoardImage(BoardImage img) {
 		return sqlSession.insert("boardMapper.insertBoardImage", img);
+	}
+
+	/** 게시글 삭제
+	 * @param boardNo
+	 * @return result
+	 */
+	public int deleteBoard(int boardNo) {
+		return sqlSession.update("boardMapper.deleteBoard", boardNo);
+	}
+
+	
+	
+	/** 검색 조건에 맞는 전체 게시글 수 count
+	 * @param search
+	 * @return searchListCount
+	 */
+	public int getSearchListCount(Search search) {
+		return sqlSession.selectOne("boardMapper.getSearchListCount", search);
+	}
+
+	/** 조건에 맞는 게시글 목록 조회
+	 * @param pagination
+	 * @param search
+	 * @return boardList
+	 */
+	public List<Board> selectSearchBoardList(Pagination pagination, Search search) {
+		
+		// 건너 뛸 행의 수 계산
+		int offset = (pagination.getCurrentPage() - 1) * pagination.getLimit(); 
+		
+		// pagination.getLimit() : 건너 뛴 후 조회할 행의 수
+		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
+		
+		return sqlSession.selectList("boardMapper.selectSearchBoardList", search, rowBounds);
+		
 	}
 	
 	

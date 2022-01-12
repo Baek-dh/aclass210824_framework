@@ -164,3 +164,12 @@
 
 
 
+/* 게시글 목록에 카테고리 검색 추가 */
+#boardName{ position : relative;}
+#selectCategory{
+   font-size: 16px;
+    position: absolute;
+    top: 65px;
+    right: 30px;
+}
+

@@ -22,6 +22,7 @@ import edu.kh.fin.board.model.service.BoardServiceImpl;
 import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
+import edu.kh.fin.board.model.vo.Search;
 import edu.kh.fin.common.Util;
 import edu.kh.fin.member.model.vo.Member;
 
@@ -41,16 +42,39 @@ public class BoardController {
 	// -> 현재 페이지를 나타내는 파라미터 cp 전달 받기
 	@RequestMapping("list")
 	public String selectBoardList( 
-			@RequestParam(value="cp", required=false, defaultValue="1") int cp,  Model model   ) {    
+			@RequestParam(value="cp", required=false, defaultValue="1") int cp,  Model model,
+			Search search /*검색용 커맨드 객체*/) {    
 		
-		// 1. 페이징 처리용 객체 Pagination 생성하기
-		//    -> 전체 게시글 수 count + 페이징 처리에 필요한 값 계산
-		Pagination pagination = service.getPagination(cp);
-		//System.out.println(pagination);
+		Pagination pagination = null;
+		List<Board> boardList = null;
 		
-		// 2. 지정된 범위의 게시글 목록 조회
-		List<Board> boardList = service.selectBoardList(pagination);
+		// 검색을 했을 경우
+		if( search.getCt() != null 
+				||  (search.getSv() != null  && !search.getSv().trim().equals("") ) ) {
+			
+			// 검색 조건에 맞는 전체 게시글 수 count + 페이징 처리에 필요한 값 계산
+			pagination = service.getPagination(cp, search);
+			
+			// 검색 조건에 맞는 게시글 목록 조회
+			boardList = service.selectBoardList(pagination, search);
 		
+		} else { // 검색 값이 있을 경우
+
+			
+			// 1. 페이징 처리용 객체 Pagination 생성하기
+			//    -> 전체 게시글 수 count + 페이징 처리에 필요한 값 계산
+			pagination = service.getPagination(cp);
+			//System.out.println(pagination);
+			
+			// 2. 지정된 범위의 게시글 목록 조회
+			boardList = service.selectBoardList(pagination);
+			
+		}
+		
+		// 카테고리 조회 서비스 호출
+		List<Category> category = service.selectCategory();
+		
+		model.addAttribute("category", category);
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("boardList", boardList);
 		
@@ -210,6 +234,36 @@ public class BoardController {
 			Util.swalSetMessage("게시글 수정 실패", null, "error", ra);
 			path = "updateForm";
 		}
+		
+		return "redirect:" + path;
+	}
+	
+	
+	
+	// 게시글 삭제
+	@RequestMapping(value="delete", method=RequestMethod.POST)
+	public String deleteBoard(int boardNo /*게시글 번호*/,
+			@RequestParam(value="cp", required=false, defaultValue="1") int cp,
+			RedirectAttributes ra) {
+		
+		// 게시글 삭제 Service 호출
+		int result = service.deleteBoard(boardNo);
+		
+		// (상태 코드 -> 4로 update)
+		// 삭제 성공 시 "list?cp=" + cp  로 리다이렉트 + 성공 메시지
+		// 실패 시 삭제하려던 글 상세조회 페이지로 리다이렉트 + 실패 메시지
+		
+		String path = null;
+		
+		if(result > 0) {
+			Util.swalSetMessage("게시글 삭제 성공", null, "success", ra);
+			path = "list?cp=" + cp;
+			
+		}else {
+			Util.swalSetMessage("게시글 삭제 실패", null, "error", ra);
+			path = "view/" + boardNo + "?cp=" + cp;
+		}
+		
 		
 		return "redirect:" + path;
 	}

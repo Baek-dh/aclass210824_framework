@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
+import edu.kh.fin.board.model.vo.Search;
 
 // Service 인터페이스 왜 사용할까?
 // 1. 규칙성
@@ -70,6 +71,27 @@ public interface BoardService {
 	 * @return board
 	 */
 	Board selectBoard(int boardNo);
+
+	/** 게시글 삭제
+	 * @param boardNo
+	 * @return result
+	 */
+	int deleteBoard(int boardNo);
+
+	/**  검색 조건에 맞는 전체 게시글 수 count + 페이징 처리에 필요한 값 계산
+	 * @param cp
+	 * @param search
+	 * @return pagination
+	 */
+	Pagination getPagination(int cp, Search search);
+
+
+	/** 검색 조건에 맞는 게시글 목록 조회
+	 * @param pagination
+	 * @param search
+	 * @return boardList
+	 */
+	List<Board> selectBoardList(Pagination pagination, Search search);
 
 }
 

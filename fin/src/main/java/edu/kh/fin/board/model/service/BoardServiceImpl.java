@@ -19,6 +19,7 @@ import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.BoardImage;
 import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
+import edu.kh.fin.board.model.vo.Search;
 import edu.kh.fin.common.Util;
 
 @Service // Service임을 알려줌 + Bean 등록
@@ -287,6 +288,34 @@ public class BoardServiceImpl implements BoardService{
 		
 		return result;
 	}
+
+
+	// 게시글 삭제
+	@Override
+	public int deleteBoard(int boardNo) {
+		return dao.deleteBoard(boardNo);
+	}
+
+
+	// 검색 조건에 맞는 전체 게시글 수 count + 페이징 처리에 필요한 값 계산
+	@Override
+	public Pagination getPagination(int cp, Search search) {
+		
+		int searchListCount = dao.getSearchListCount(search);
+		
+		return new Pagination(searchListCount, cp);
+	}
+
+
+	// 조건에 맞는 게시글 목록 조회
+	@Override
+	public List<Board> selectBoardList(Pagination pagination, Search search) {
+		return dao.selectSearchBoardList(pagination, search);
+	}
+	
+	
+	
+	
 	
 	
 	

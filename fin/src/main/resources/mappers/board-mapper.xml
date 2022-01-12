@@ -199,7 +199,7 @@
 		DELETE FROM BOARD_IMG
 		WHERE BOARD_NO = #{boardNo}
 		AND IMG_LEVEL IN ( ${deleteImages} )
-	</delete>
+	</delete> 
 
 
 
@@ -219,7 +219,97 @@
 		(SEQ_IMG_NO.NEXTVAL, #{imgPath}, #{imgName}, #{imgOriginal}, #{imgLevel}, #{boardNo})
 	</insert>
 
+	<!-- 게시글 삭제 -->
+	<update id="deleteBoard" parameterType="_int">
+		UPDATE BOARD SET
+		STATUS_CD = 4
+		WHERE BOARD_NO = #{boardNo}
+	</update>
 
+
+	<!-- 검색 조건에 맞는 전체 게시글 수 count -->
+	<!-- 마이바티스 동적 SQL 중 <if> 또는 <choose> 사용  + <bind> (변수 선언) -->
+	<select id="getSearchListCount" resultType="_int">
+		SELECT COUNT(*) FROM BOARD JOIN MEMBER USING(MEMBER_NO)
+		WHERE BOARD.STATUS_CD != 4	
+		
+		<if test="sv != null">
+			<bind name="val" value="'%' + sv + '%'" />
+		
+			<choose>
+				<when test="sk == 'title'">
+				AND	BOARD_TITLE LIKE #{val}
+				</when>	
+				
+				<when test="sk == 'content'">
+				AND	BOARD_CONTENT LIKE #{val}
+				</when>	
+				
+				<when test="sk == 'titcont'">
+				AND	(BOARD_TITLE LIKE #{val} 
+					OR BOARD_CONTENT LIKE #{val})
+				</when>	
+			
+				<when test="sk == 'writer'">
+				AND	MEMBER_NM LIKE #{val}
+				</when>	
+			</choose>
+		</if>
+		
+		<if test="ct != null">
+			AND CATEGORY_CD = #{ct}
+		</if>
+		
+	</select>
+	
+	
+	
+
+	<!-- 조건에 맞는 게시글 목록 조회 -->
+	<select id="selectSearchBoardList" resultMap="board_rm">
+		<![CDATA[
+		SELECT BOARD_NO, BOARD_TITLE, READ_COUNT,
+		    CASE WHEN SYSDATE - CREATE_DT < 1
+		         THEN TO_CHAR(CREATE_DT, 'HH:MI')     
+		         ELSE TO_CHAR(CREATE_DT, 'YYYY-MM-DD')
+		    END "CREATE_DT",
+		    MEMBER_NO, MEMBER_NM, STATUS_CD, STATUS_NM, CATEGORY_CD, CATEGORY_NM
+		FROM BOARD -- STATUS_CD
+		JOIN MEMBER USING(MEMBER_NO) -- STATUS_CD
+		JOIN STATUS ON(BOARD.STATUS_CD = STATUS.STATUS_CD)
+		JOIN CATEGORY USING(CATEGORY_CD) ]]> 
+		WHERE STATUS_CD != 4
+	
+		<if test="sv != null">
+			<bind name="val" value="'%' + sv + '%'" />
+			
+			<choose>
+				<when test="sk == 'title'">
+				AND	BOARD_TITLE LIKE #{val}
+				</when>	
+				
+				<when test="sk == 'content'">
+				AND	BOARD_CONTENT LIKE #{val}
+				</when>	
+				
+				<when test="sk == 'titcont'">
+				AND	(BOARD_TITLE LIKE #{val} 
+					OR BOARD_CONTENT LIKE #{val})
+				</when>	
+			
+				<when test="sk == 'writer'">
+				AND	MEMBER_NM LIKE #{val}
+				</when>	
+			</choose>
+		</if>
+		
+		<if test="ct != null">
+			AND CATEGORY_CD = #{ct}
+		</if>
+		
+		ORDER BY BOARD_NO DESC
+		
+	</select>
 
 
 
