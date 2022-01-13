@@ -19,9 +19,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.fin.board.model.service.BoardService;
 import edu.kh.fin.board.model.service.BoardServiceImpl;
+import edu.kh.fin.board.model.service.ReplyService;
 import edu.kh.fin.board.model.vo.Board;
 import edu.kh.fin.board.model.vo.Category;
 import edu.kh.fin.board.model.vo.Pagination;
+import edu.kh.fin.board.model.vo.Reply;
 import edu.kh.fin.board.model.vo.Search;
 import edu.kh.fin.common.Util;
 import edu.kh.fin.member.model.vo.Member;
@@ -36,6 +38,9 @@ public class BoardController {
 	
 	@Autowired // Bean으로 등록된 객체 중 같은 타입 또는 상속 관계 객체를 자동으로 DI
 	private BoardService service;
+	
+	@Autowired // 댓글 목록 조회 서비스를 위해 DI 받음
+	private ReplyService replyService;
 	
 
 	// 게시글 목록 조회
@@ -118,6 +123,10 @@ public class BoardController {
 		
 		String path = null;
 		if(board != null) { // 조회 성공 시
+			
+			// 댓글 목록 조회 Service 호출
+			List<Reply> rList = replyService.selectList(boardNo);
+			model.addAttribute("rList", rList);
 			
 			model.addAttribute("board", board);
 			path = "board/boardView";

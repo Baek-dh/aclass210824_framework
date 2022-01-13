@@ -20,6 +20,7 @@
 		<typeAlias type="edu.kh.fin.board.model.vo.Board" alias="Board"/>
 		<typeAlias type="edu.kh.fin.board.model.vo.BoardImage" alias="BoardImage"/>
 		<typeAlias type="edu.kh.fin.board.model.vo.Category" alias="Category"/>
+		<typeAlias type="edu.kh.fin.board.model.vo.Reply" alias="Reply"/>
 	</typeAliases>
 	
 	
@@ -27,8 +28,12 @@
 	<mappers>
 		<mapper resource="/mappers/member-mapper.xml" />
 		<mapper resource="/mappers/board-mapper.xml" />
+		<mapper resource="/mappers/reply-mapper.xml" />
 	</mappers>
 
 
 
 </configuration>
+
+
+

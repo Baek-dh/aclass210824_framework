@@ -144,7 +144,7 @@
 				
 				
 				<%-- 댓글 영역 include 예정 --%>
-				<%-- <jsp:include page="reply.jsp"/> --%>
+				<jsp:include page="reply.jsp"/>
 			</div>
 
 		</div>
