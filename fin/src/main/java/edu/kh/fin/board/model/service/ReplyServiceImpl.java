@@ -33,6 +33,22 @@ public class ReplyServiceImpl implements ReplyService{
 		
 		return dao.insertReply(reply);
 	}
+
+	// 댓글 수정
+	@Override
+	public int updateReply(Reply reply) {
+		// XSS, 개행문자 처리
+		reply.setReplyContent(  Util.XSS(reply.getReplyContent())  );
+		reply.setReplyContent(  Util.changeNewLine(reply.getReplyContent())  );
+		
+		return dao.updateReply(reply);
+	}
+
+	// 댓글 삭제
+	@Override
+	public int deleteReply(int replyNo) {
+		return dao.deleteReply(replyNo);
+	}
 	
 	
 	

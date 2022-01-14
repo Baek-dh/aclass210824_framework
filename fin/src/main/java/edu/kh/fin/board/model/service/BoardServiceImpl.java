@@ -312,6 +312,12 @@ public class BoardServiceImpl implements BoardService{
 	public List<Board> selectBoardList(Pagination pagination, Search search) {
 		return dao.selectSearchBoardList(pagination, search);
 	}
+
+	// 이미지 파일명 목록 조회
+	@Override
+	public List<String> selectImgList() {
+		return dao.selectImgList();
+	}
 	
 	
 	

@@ -93,6 +93,11 @@ public interface BoardService {
 	 */
 	List<Board> selectBoardList(Pagination pagination, Search search);
 
+	/** 이미지 파일명 목록 조회
+	 * @return dbImgList
+	 */
+	List<String> selectImgList();
+
 }
 
 

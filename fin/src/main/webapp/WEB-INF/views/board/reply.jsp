@@ -26,7 +26,7 @@
 	<div class="replyList mt-5 pt-2">
 		<ul id="replyListArea">
 		
-			<li class="reply-row">
+			<%-- <li class="reply-row">
 				<div>
 					<p class="rWriter">홍길동</p>
 					<p class="rDate">작성일 : 2022년 01월 12일 16시 06분 43초</p>
@@ -45,7 +45,7 @@
 				<div class="replyBtnArea">
 					<button class="btn btn-primary btn-sm ml-1"  onclick="insertChildReply('댓글번호', '게시글번호')">대댓글 등록</button>
 					<button class="btn btn-primary btn-sm ml-1"  onclick="insertCancel(this)">취소</button>
-				</div> -->
+				</div> -->\
 				
 				
 			</li>
@@ -71,7 +71,7 @@
 				</div> -->
 				
 				
-			</li>
+			</li> --%>
 			
 			
 			<c:forEach items="${rList}" var="reply">

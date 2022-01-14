@@ -47,14 +47,20 @@ public class ReplyController {
 		return service.insertReply(reply);
 	}
 	
+	
 	// 댓글 수정 
-	public String updateReply() {
-		return null;
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	public int updateReply(Reply reply/*커맨드 객체*/) {
+							//replyNo, replyContent
+		return service.updateReply(reply);
 	}
 	
+	
+	
 	// 댓글 삭제 
-	public String deleteReply() {
-		return null;
+	@RequestMapping(value="delete", method=RequestMethod.POST)
+	public int deleteReply(int replyNo) {
+		return service.deleteReply(replyNo);
 	}
 	
 	

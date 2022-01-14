@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import edu.kh.fin.board.model.vo.Reply;
 
+/**
+ * @author user1
+ *
+ */
 @Repository
 public class ReplyDAO {
 	
@@ -28,6 +32,22 @@ public class ReplyDAO {
 	 */
 	public int insertReply(Reply reply) {
 		return sqlSession.insert("replyMapper.insertReply", reply);
+	}
+
+	/** 댓글 수정
+	 * @param reply
+	 * @return result
+	 */
+	public int updateReply(Reply reply) {
+		return sqlSession.update("replyMapper.updateReply", reply);
+	}
+
+	/** 댓글 삭제
+	 * @param replyNo
+	 * @return result
+	 */
+	public int deleteReply(int replyNo) {
+		return sqlSession.update("replyMapper.deleteReply", replyNo);
 	}
 	
 	
