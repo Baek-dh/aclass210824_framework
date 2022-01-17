@@ -102,6 +102,15 @@
 		    <version>2.8.9</version>
 		</dependency>
 
+		<!-- Spring 웹소켓 모듈  + Jackson-databind(이미 준비됨)  -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>5.2.10.RELEASE</version>
+		</dependency>
+
+
 	
 	
 		<!-- Spring -->

@@ -22,7 +22,7 @@ import edu.kh.fin.common.Util;
 import edu.kh.fin.member.model.vo.Member;
 
 @Controller
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "chatRoomNo"})
 public class ChatController {
 
 	@Autowired
@@ -66,7 +66,7 @@ public class ChatController {
 	@RequestMapping("/chat/room/{chatRoomNo}")
 	public String joinChatRoom(@PathVariable("chatRoomNo") int chatRoomNo,
 				@ModelAttribute("loginMember") Member loginMember,
-				ChatRoomJoin join, RedirectAttributes ra) {
+				ChatRoomJoin join, RedirectAttributes ra, Model model) {
 		
 		// 1. ChatRoomJoin VO에 방번호, 회원 번호 추가
 		join.setChatRoomNo(chatRoomNo);
@@ -76,8 +76,30 @@ public class ChatController {
 		List<ChatMessage> list = service.joinChatRoom(join);
 		
 		
+		// 3-1. 채팅방이 존재하면 조회한 채팅 내역과 채팅 번호를 jsp로 forward
+		if(list != null) {
+			
+			model.addAttribute("list", list);
+			
+			// *******************************************
+			
+			model.addAttribute("chatRoomNo", chatRoomNo);  // session에 올림
+			// model은 기본적으로 request
+			// -> @SessionAttributes에 추가되면 session 으로 변경
+			
+			// *******************************************
+			
+			return "chat/chatRoom";
+			
+		}else { // 3-2. 채팅방이 존재하지 않으면 roomList로 리다이렉트
+			Util.swalSetMessage("해당 채팅방이 존재하지 않습니다.", null, "info", ra);
+			
+			//   /chat/room/3
+			//   /chat/roomList
+			return "redirect:../roomList";
+		}
 		
-		return null;
+		
 	}
 	
 	
