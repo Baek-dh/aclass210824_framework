@@ -13,18 +13,31 @@
 		<ul class="display-chatting">
 	
 			<c:forEach items="${list}" var="msg">
+			
+				<%-- message가 null인 경우/null이 아닌 경우를 구분하기 --%>
+				<c:choose>
+					<c:when test="${!empty msg.message}">
+						<c:set var="message" value="${msg.message}"/>
+					</c:when>
+					
+					<c:otherwise>
+						<c:set var="message" value="<b>${msg.memberName}님이 나가셨습니다.</b>"/>
+					</c:otherwise>
+					
+				</c:choose>
+				
 				
 				<c:if test="${msg.memberNo == loginMember.memberNo }">
 					<li class="myChat">
 						<span class="chatDate">${msg.createDate}</span>
-						<p class="chat">${msg.message }</p>
+						<p class="chat">${message }</p>
 					</li>
 				</c:if>
 				
 				<c:if test="${msg.memberNo != loginMember.memberNo }">
 					<li>
 						<b>${msg.memberName }</b>	<br>
-						<p class="chat">${msg.message }</p>
+						<p class="chat">${message }</p>
 						<span class="chatDate">${msg.createDate}</span>
 					</li>
 				</c:if>

@@ -23,7 +23,11 @@ import edu.kh.fin.member.model.vo.Member;
 @Controller
 public class HomeController {
 	
+	// Logger : 로그를 작성할 수 있게하는 객체
+	// LoggerFactory : Logger객체를 만드는 객체
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	
 	
 	// 최상위 주소 ("/" == "/fin/") 요청 시 이를 제어하는 컨트롤러
 	/*@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -44,6 +48,14 @@ public class HomeController {
 	// GET 방식 "/" 요청이 전달 되었을 때 처리하는 메소드
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String mainForward() {
+		
+		// 로그 남기기
+		/*logger.debug("메인 페이지 접속");
+		logger.info("메인 페이지 접속");
+		logger.warn("메인 페이지 접속");
+		logger.error("메인 페이지 접속");*/
+		
+		
 		return "common/main";
 	}
 	

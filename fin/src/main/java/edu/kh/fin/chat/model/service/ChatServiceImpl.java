@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.kh.fin.chat.model.dao.ChatDAO;
 import edu.kh.fin.chat.model.vo.ChatMessage;
 import edu.kh.fin.chat.model.vo.ChatRoom;
 import edu.kh.fin.chat.model.vo.ChatRoomJoin;
+import edu.kh.fin.common.Util;
 
 @Service
 public class ChatServiceImpl implements ChatService{
@@ -70,6 +72,36 @@ public class ChatServiceImpl implements ChatService{
 		}
 		
 	}
+
+	// 채팅 내용 삽입
+	@Transactional
+	@Override
+	public int insertMessage(ChatMessage cm) {
+		
+		int result = 0;
+		
+		if(cm.getMessage() == null) { // 나가기 버튼
+			
+			result = dao.insertMessage(cm);
+			// 나가기 처리 DAO 호출
+			
+			if(result > 0) {
+				result = dao.exitChatRoom(cm);
+			}
+			
+			
+		}else { // 채팅 내용 삽입
+			// XSS, 개행문자 처리
+			cm.setMessage( Util.XSS(cm.getMessage())  );
+			cm.setMessage( Util.changeNewLine(cm.getMessage())  );
+			
+			result = dao.insertMessage(cm);
+		}
+		
+		return result;
+	}
+	
+	
 	
 	
 	
