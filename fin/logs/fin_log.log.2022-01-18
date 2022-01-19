@@ -1,0 +1,303 @@
+2022-01-18 11:53:14 [DEBUG] 메인 페이지 접속
+2022-01-18 11:53:14 [INFO] 메인 페이지 접속
+2022-01-18 11:53:14 [WARN] 메인 페이지 접속
+2022-01-18 11:53:14 [ERROR] 메인 페이지 접속
+2022-01-18 12:50:55 [DEBUG] 메인 페이지 접속
+2022-01-18 12:50:55 [INFO] 메인 페이지 접속
+2022-01-18 12:50:55 [WARN] 메인 페이지 접속
+2022-01-18 12:50:55 [ERROR] 메인 페이지 접속
+2022-01-18 12:53:09 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 12:53:09 [DEBUG] 메인 페이지 접속
+2022-01-18 12:53:09 [INFO] 메인 페이지 접속
+2022-01-18 12:53:09 [WARN] 메인 페이지 접속
+2022-01-18 12:53:09 [ERROR] 메인 페이지 접속
+2022-01-18 12:53:11 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 12:53:12 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:08:56 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:08:56 [DEBUG] 메인 페이지 접속
+2022-01-18 14:08:56 [INFO] 메인 페이지 접속
+2022-01-18 14:08:56 [WARN] 메인 페이지 접속
+2022-01-18 14:08:56 [ERROR] 메인 페이지 접속
+2022-01-18 14:09:17 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:09:18 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:09:18 [DEBUG] 메인 페이지 접속
+2022-01-18 14:09:18 [INFO] 메인 페이지 접속
+2022-01-18 14:09:18 [WARN] 메인 페이지 접속
+2022-01-18 14:09:18 [ERROR] 메인 페이지 접속
+2022-01-18 14:09:30 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:09:33 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:09:38 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:09:40 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:09:41 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:25:39 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:25:39 [DEBUG] []
+2022-01-18 14:25:39 [DEBUG] 메인 페이지 접속
+2022-01-18 14:25:39 [INFO] 메인 페이지 접속
+2022-01-18 14:25:39 [WARN] 메인 페이지 접속
+2022-01-18 14:25:39 [ERROR] 메인 페이지 접속
+2022-01-18 14:25:53 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:25:53 [DEBUG] [Member [memberNo=0, memberId=user02, memberPw=pass02!, memberName=null, memberPhone=null, memberEmail=null, memberAddress=null, enrollDate=null, statusCode=0, gradeCode=0], {member=Member [memberNo=0, memberId=user02, memberPw=pass02!, memberName=null, memberPhone=null, memberEmail=null, memberAddress=null, enrollDate=null, statusCode=0, gradeCode=0], org.springframework.validation.BindingResult.member=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, {}, on, org.apache.catalina.connector.RequestFacade@3dc2961, org.apache.catalina.connector.ResponseFacade@66cb00de]
+2022-01-18 14:25:55 [DEBUG] 요청이 전달되서 컨트롤러 메소드가 실행됨.
+2022-01-18 14:25:55 [DEBUG] []
+2022-01-18 14:25:55 [DEBUG] 메인 페이지 접속
+2022-01-18 14:25:55 [INFO] 메인 페이지 접속
+2022-01-18 14:25:55 [WARN] 메인 페이지 접속
+2022-01-18 14:25:55 [ERROR] 메인 페이지 접속
+2022-01-18 14:36:00 [INFO] [Controller]edu.kh.fin.HomeController.mainForward
+2022-01-18 14:37:18 [INFO] [Controller]HomeController.mainForward
+2022-01-18 14:37:26 [INFO] [Controller]MemberController.login5
+2022-01-18 14:37:28 [INFO] [Controller]HomeController.mainForward
+2022-01-18 14:37:43 [INFO] [Controller]BoardController.selectBoardList
+2022-01-18 14:37:47 [INFO] [Controller]BoardController.selectBoard
+2022-01-18 14:37:50 [INFO] [Controller]BoardController.selectBoardList
+2022-01-18 14:37:52 [INFO] [Controller]BoardController.selectBoardList
+2022-01-18 14:37:54 [INFO] [Controller]BoardController.boardInsert
+2022-01-18 14:37:58 [INFO] [Controller]BoardController.boardInsert
+2022-01-18 14:38:06 [INFO] [Controller]BoardController.boardInsert
+2022-01-18 15:11:02 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]HomeController.mainForward()
+2022-01-18 15:11:33 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:11:35 [INFO] [ip]106.101.67.117 [Controller]HomeController.mainForward()
+2022-01-18 15:11:49 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:11:56 [INFO] [ip]222.110.17.195 [Controller]HomeController.mainForward()
+2022-01-18 15:11:56 [INFO] [ip]175.194.14.4 [Controller]HomeController.mainForward()
+2022-01-18 15:11:57 [INFO] [ip]222.109.79.84 [Controller]HomeController.mainForward()
+2022-01-18 15:12:00 [INFO] [ip]61.253.81.190 [Controller]HomeController.mainForward()
+2022-01-18 15:12:00 [INFO] [ip]222.109.79.84 [Controller]MemberController.login5()
+2022-01-18 15:12:01 [INFO] [ip]222.109.79.84 [Controller]HomeController.mainForward()
+2022-01-18 15:12:05 [INFO] [ip]125.178.106.119 [Controller]HomeController.mainForward()
+2022-01-18 15:12:07 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:07 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:08 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:09 [INFO] [ip]222.109.64.160 [Controller]HomeController.mainForward()
+2022-01-18 15:12:10 [INFO] [ip]1.229.84.17 [Controller]HomeController.mainForward()
+2022-01-18 15:12:13 [INFO] [ip]222.109.79.84 [Controller]MemberController.signUp()
+2022-01-18 15:12:13 [INFO] [ip]125.178.106.119 [Controller]MemberController.login5()
+2022-01-18 15:12:13 [INFO] [ip]125.178.106.119(id:lsw1873) [Controller]HomeController.mainForward()
+2022-01-18 15:12:13 [INFO] [ip]175.194.14.4 [Controller]MemberController.signUp()
+2022-01-18 15:12:13 [INFO] [ip]219.248.203.87 [Controller]HomeController.mainForward()
+2022-01-18 15:12:14 [INFO] [ip]122.40.144.210 [Controller]HomeController.mainForward()
+2022-01-18 15:12:14 [INFO] [ip]116.43.97.212 [Controller]HomeController.mainForward()
+2022-01-18 15:12:15 [INFO] [ip]61.253.81.190 [Controller]MemberController.login5()
+2022-01-18 15:12:15 [INFO] [ip]61.253.81.190 [Controller]HomeController.mainForward()
+2022-01-18 15:12:15 [INFO] [ip]222.109.79.84 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:15 [INFO] [ip]122.47.24.29 [Controller]HomeController.mainForward()
+2022-01-18 15:12:16 [INFO] [ip]222.110.17.195 [Controller]MemberController.login5()
+2022-01-18 15:12:16 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]HomeController.mainForward()
+2022-01-18 15:12:16 [INFO] [ip]122.34.129.105 [Controller]HomeController.mainForward()
+2022-01-18 15:12:17 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:12:17 [INFO] [ip]192.168.10.1(id:ykh1234) [Controller]HomeController.mainForward()
+2022-01-18 15:12:18 [INFO] [ip]175.194.14.4 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:19 [INFO] [ip]192.168.10.1 [Controller]MemberController.signUp()
+2022-01-18 15:12:19 [INFO] [ip]175.194.14.4 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:20 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:12:20 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:12:20 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:20 [INFO] [ip]192.168.10.1(id:user1010) [Controller]HomeController.mainForward()
+2022-01-18 15:12:22 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:24 [INFO] [ip]219.248.203.87 [Controller]MemberController.login5()
+2022-01-18 15:12:24 [INFO] [ip]219.248.203.87(id:bong01) [Controller]HomeController.mainForward()
+2022-01-18 15:12:24 [INFO] [ip]116.43.97.212 [Controller]MemberController.login5()
+2022-01-18 15:12:24 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]HomeController.mainForward()
+2022-01-18 15:12:26 [INFO] [ip]222.109.79.84 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:26 [INFO] [ip]222.109.79.84 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:26 [INFO] [ip]222.109.79.84 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:27 [INFO] [ip]222.109.79.84 [Controller]MemberController.signUp()
+2022-01-18 15:12:27 [INFO] [ip]222.109.79.84 [Controller]HomeController.mainForward()
+2022-01-18 15:12:27 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:28 [INFO] [ip]192.168.10.1 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:28 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:29 [INFO] [ip]192.168.10.1 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:29 [INFO] [ip]122.40.144.210 [Controller]MemberController.login5()
+2022-01-18 15:12:29 [INFO] [ip]122.34.129.105 [Controller]MemberController.login5()
+2022-01-18 15:12:29 [INFO] [ip]192.168.10.1 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:29 [INFO] [ip]122.40.144.210(id:user46) [Controller]HomeController.mainForward()
+2022-01-18 15:12:29 [INFO] [ip]122.34.129.105(id:user02) [Controller]HomeController.mainForward()
+2022-01-18 15:12:30 [INFO] [ip]222.109.79.84 [Controller]MemberController.login5()
+2022-01-18 15:12:30 [INFO] [ip]222.109.79.84(id:asdasd) [Controller]HomeController.mainForward()
+2022-01-18 15:12:31 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:32 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:12:32 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:12:33 [INFO] [ip]222.109.64.160 [Controller]MemberController.login5()
+2022-01-18 15:12:33 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]HomeController.mainForward()
+2022-01-18 15:12:35 [INFO] [ip]175.194.14.4 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:35 [INFO] [ip]175.194.14.4 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:35 [INFO] [ip]175.194.14.4 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:36 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]ChatController.chatRoomList()
+2022-01-18 15:12:37 [INFO] [ip]218.146.55.250 [Controller]HomeController.mainForward()
+2022-01-18 15:12:38 [INFO] [ip]175.194.14.4 [Controller]MemberController.signUp()
+2022-01-18 15:12:38 [INFO] [ip]175.194.14.4 [Controller]HomeController.mainForward()
+2022-01-18 15:12:39 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:12:40 [INFO] [ip]1.229.84.17 [Controller]MemberController.login5()
+2022-01-18 15:12:40 [INFO] [ip]1.229.84.17(id:zxcasdqwe) [Controller]HomeController.mainForward()
+2022-01-18 15:12:41 [INFO] [ip]122.47.24.29 [Controller]MemberController.login5()
+2022-01-18 15:12:41 [INFO] [ip]122.47.24.29 [Controller]HomeController.mainForward()
+2022-01-18 15:12:44 [INFO] [ip]175.194.14.4 [Controller]MemberController.login5()
+2022-01-18 15:12:44 [INFO] [ip]175.194.14.4(id:123123) [Controller]HomeController.mainForward()
+2022-01-18 15:12:45 [INFO] [ip]1.229.84.17(id:zxcasdqwe) [Controller]MemberController.logout()
+2022-01-18 15:12:45 [INFO] [ip]1.229.84.17 [Controller]HomeController.mainForward()
+2022-01-18 15:12:45 [INFO] [ip]218.146.55.250 [Controller]MemberController.login5()
+2022-01-18 15:12:45 [INFO] [ip]218.146.55.250 [Controller]HomeController.mainForward()
+2022-01-18 15:12:48 [INFO] [ip]1.229.84.17 [Controller]ChatController.chatRoomList()
+2022-01-18 15:12:49 [INFO] [ip]218.146.55.250 [Controller]MemberController.signUp()
+2022-01-18 15:12:49 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:12:50 [INFO] [ip]122.47.24.29 [Controller]MemberController.login5()
+2022-01-18 15:12:50 [INFO] [ip]122.47.24.29 [Controller]HomeController.mainForward()
+2022-01-18 15:12:52 [INFO] [ip]1.229.84.17 [Controller]MemberController.signUp()
+2022-01-18 15:12:53 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:12:53 [INFO] [ip]218.146.55.250 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:53 [INFO] [ip]218.146.55.250 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:54 [INFO] [ip]218.146.55.250 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:54 [INFO] [ip]218.146.55.250 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:55 [INFO] [ip]218.146.55.250 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:55 [INFO] [ip]218.146.55.250 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:57 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:12:58 [INFO] [ip]192.168.10.1 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:58 [INFO] [ip]192.168.10.1 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:58 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]ChatController.chatRoomList()
+2022-01-18 15:12:58 [INFO] [ip]192.168.10.1 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:59 [INFO] [ip]192.168.10.1 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:59 [INFO] [ip]192.168.10.1 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:12:59 [INFO] [ip]192.168.10.1 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:00 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:00 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:00 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:00 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:01 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:01 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:01 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:05 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:06 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:08 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:08 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:08 [INFO] [ip]218.146.55.250 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:08 [INFO] [ip]218.146.55.250 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:09 [INFO] [ip]218.146.55.250 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:09 [INFO] [ip]192.168.10.1 [Controller]MemberController.signUp()
+2022-01-18 15:13:09 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:13:09 [INFO] [ip]125.178.106.119(id:lsw1873) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:10 [INFO] [ip]122.40.144.210(id:user46) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:10 [INFO] [ip]218.146.55.250 [Controller]MemberController.signUp()
+2022-01-18 15:13:10 [INFO] [ip]218.146.55.250 [Controller]HomeController.mainForward()
+2022-01-18 15:13:11 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:11 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:11 [INFO] [ip]1.229.84.17 [Controller]MemberController.idDupCheck()
+2022-01-18 15:13:11 [INFO] [ip]192.168.10.1 [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:11 [INFO] [ip]125.178.106.119(id:lsw1873) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:12 [INFO] [ip]122.40.144.210(id:user46) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:13 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:13 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:14 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:14 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:14 [INFO] [ip]122.40.144.210(id:user46) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:15 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:15 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:15 [INFO] [ip]122.40.144.210(id:user46) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:16 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:13:16 [INFO] [ip]192.168.10.1(id:user02) [Controller]HomeController.mainForward()
+2022-01-18 15:13:17 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:17 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:17 [INFO] [ip]192.168.10.1(id:user02) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:17 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:17 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:18 [INFO] [ip]192.168.10.1(id:user02) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:18 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:19 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:13:19 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:13:20 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:20 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:20 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:20 [INFO] [ip]192.168.10.1(id:user02) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:21 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:21 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:21 [INFO] [ip]192.168.10.1(id:user02) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:21 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:22 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:22 [INFO] [ip]175.194.14.4(id:123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:23 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:24 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:24 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:25 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:26 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:13:26 [INFO] [ip]192.168.10.1(id:useruser1) [Controller]HomeController.mainForward()
+2022-01-18 15:13:27 [INFO] [ip]218.146.55.250 [Controller]MemberController.login5()
+2022-01-18 15:13:27 [INFO] [ip]218.146.55.250(id:kohyengsuck) [Controller]HomeController.mainForward()
+2022-01-18 15:13:28 [INFO] [ip]122.40.144.210(id:user46) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:28 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]HomeController.mainForward()
+2022-01-18 15:13:28 [INFO] [ip]218.146.55.250(id:kohyengsuck) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:31 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:13:31 [INFO] [ip]192.168.10.1(id:qwer1234) [Controller]HomeController.mainForward()
+2022-01-18 15:13:32 [INFO] [ip]218.146.55.250(id:kohyengsuck) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:32 [INFO] [ip]192.168.10.1(id:qwer1234) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:32 [INFO] [ip]125.178.106.119(id:lsw1873) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:33 [INFO] [ip]192.168.10.1(id:qwer1234) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:33 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:35 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]MemberController.myPage()
+2022-01-18 15:13:35 [INFO] [ip]192.168.10.1(id:user1010) [Controller]ChatController.joinChatRoom()
+2022-01-18 15:13:35 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:35 [INFO] [ip]192.168.10.1(id:useruser1) [Controller]BoardController.selectBoardList()
+2022-01-18 15:13:35 [INFO] [ip]222.110.17.195(id:qwe123123) [Controller]MemberController.logout()
+2022-01-18 15:13:35 [INFO] [ip]222.110.17.195 [Controller]HomeController.mainForward()
+2022-01-18 15:13:36 [INFO] [ip]192.168.10.1(id:useruser1) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:37 [INFO] [ip]1.229.84.17 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:37 [INFO] [ip]1.229.84.17 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:37 [INFO] [ip]1.229.84.17 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:37 [INFO] [ip]218.146.55.250(id:kohyengsuck) [Controller]ChatController.chatRoomList()
+2022-01-18 15:13:38 [INFO] [ip]219.248.203.87(id:bong01) [Controller]MemberController.logout()
+2022-01-18 15:13:38 [INFO] [ip]219.248.203.87 [Controller]HomeController.mainForward()
+2022-01-18 15:13:39 [INFO] [ip]1.229.84.17 [Controller]MemberController.emailDupCheck()
+2022-01-18 15:13:44 [INFO] [ip]1.229.84.17 [Controller]MemberController.signUp()
+2022-01-18 15:13:44 [INFO] [ip]1.229.84.17 [Controller]HomeController.mainForward()
+2022-01-18 15:13:59 [INFO] [ip]219.248.203.87 [Controller]MemberController.login5()
+2022-01-18 15:13:59 [INFO] [ip]219.248.203.87(id:bong01) [Controller]HomeController.mainForward()
+2022-01-18 15:13:59 [INFO] [ip]116.43.97.212(id:donghoon) [Controller]MemberController.logout()
+2022-01-18 15:13:59 [INFO] [ip]116.43.97.212 [Controller]HomeController.mainForward()
+2022-01-18 15:14:18 [INFO] [ip]222.109.64.160(id:buddlebuddle) [Controller]MemberController.logout()
+2022-01-18 15:14:18 [INFO] [ip]222.109.64.160 [Controller]HomeController.mainForward()
+2022-01-18 15:25:00 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:08 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]ChatController.chatRoomList()
+2022-01-18 15:25:10 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]BoardController.selectBoardList()
+2022-01-18 15:25:11 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:12 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]BoardController.selectBoard()
+2022-01-18 15:25:14 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:20 [INFO] [ip]192.168.10.1 [Controller]ChatController.chatRoomList()
+2022-01-18 15:25:22 [INFO] [ip]122.47.24.29 [Controller]HomeController.mainForward()
+2022-01-18 15:25:23 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:27 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:31 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:32 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:32 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:33 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:33 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:33 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:33 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:34 [INFO] [ip]122.47.24.29 [Controller]HomeController.mainForward()
+2022-01-18 15:25:35 [INFO] [ip]122.47.24.29 [Controller]HomeController.mainForward()
+2022-01-18 15:25:40 [INFO] [ip]192.168.10.1 [Controller]MemberController.login5()
+2022-01-18 15:25:40 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:41 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:41 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:42 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:42 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:42 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:43 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:43 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:43 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:43 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:25:44 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 15:48:44 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]HomeController.mainForward()
+2022-01-18 15:48:51 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]MemberController.login5()
+2022-01-18 15:48:52 [DEBUG] [Service]MemberServiceImpl-login()[Running Time]1430ms[Param][Member [memberNo=0, memberId=user02, memberPw=pass02!, memberName=null, memberPhone=null, memberEmail=null, memberAddress=null, enrollDate=null, statusCode=0, gradeCode=0]]
+2022-01-18 15:48:52 [INFO] [ip]0:0:0:0:0:0:0:1(id:user02) [Controller]HomeController.mainForward()
+2022-01-18 15:49:00 [DEBUG] [Service]BoardServiceImpl-selectImgList()[Running Time]2ms[Param][]
+2022-01-18 15:49:45 [INFO] [ip]0:0:0:0:0:0:0:1(id:user02) [Controller]BoardController.selectBoardList()
+2022-01-18 15:49:45 [DEBUG] [Service]BoardServiceImpl-getPagination()[Running Time]2ms[Param][1]
+2022-01-18 15:49:46 [DEBUG] [Service]BoardServiceImpl-selectBoardList()[Running Time]23ms[Param][Pagination [currentPage=1, listCount=432, limit=10, pageSize=10, maxPage=44, startPage=1, endPage=10, prevPage=1, nextPage=11]]
+2022-01-18 15:49:46 [DEBUG] [Service]BoardServiceImpl-selectCategory()[Running Time]3ms[Param][]
+2022-01-18 15:49:50 [INFO] [ip]0:0:0:0:0:0:0:1(id:user02) [Controller]BoardController.selectBoard()
+2022-01-18 15:49:50 [DEBUG] [Service]BoardServiceImpl-selectBoard()[Running Time]26ms[Param][509, 2]
+2022-01-18 15:49:50 [DEBUG] [Service]ReplyServiceImpl-selectList()[Running Time]8ms[Param][509]
+2022-01-18 15:50:00 [DEBUG] [Service]BoardServiceImpl-selectImgList()[Running Time]2ms[Param][]
+2022-01-18 16:07:41 [INFO] [ip]192.168.10.1 [Controller]HomeController.mainForward()
+2022-01-18 16:07:41 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]HomeController.mainForward()
+2022-01-18 16:07:43 [INFO] [ip]0:0:0:0:0:0:0:1 [Controller]ChatController.chatRoomList()
+2022-01-18 16:07:44 [DEBUG] [Service]ChatServiceImpl-chatRoomList() [Running Time]1388ms [Param][]

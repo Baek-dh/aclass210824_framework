@@ -42,7 +42,7 @@ public class BeforeAspect {
 	// 모든 컨트롤러 메소드 수행되기 전
 	//@Before("execution(* edu.kh.fin..*Controller.*(..))")
 	@Before("PointcutCollection.controllerPointcut()")
-	public void controllerLog(JoinPoint jp) {
+	public void controllerLog(JoinPoint jp) { // Advice
 		
 		// JoinPoint : Advice가 적용될 수 있는 모든 지점
 		
